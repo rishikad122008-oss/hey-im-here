@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9, #e3f2fd);
+    color: #263238;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 25px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 52px;
+    margin-bottom: 10px;
+    color: #2e7d5b;
+}
+
+.subtitle {
+    font-size: 19px;
+    color: #607d73;
+    margin-bottom: 45px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.feelings {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.feelings button {
+    padding: 25px 10px;
+    border: none;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #37474f;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.25s;
+}
+
+.feelings button:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.feelings button:first-line {
+    font-size: 28px;
+}
+
+#response {
+    margin-top: 40px;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    line-height: 1.6;
+    animation: appear 0.4s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 650px) {
+
+    .feelings {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    .container {
+        padding: 40px 18px;
+    }
+}
+nav {
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2e7d5b;
+    font-weight: bold;
+    margin: 0 12px;
+}
+
+textarea {
+    width: 90%;
+    max-width: 600px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    resize: vertical;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.win-card {
+    background: white;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 600px;
+    border-radius: 18px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+}

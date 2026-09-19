@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Note to Future Me 💌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">🌱 Home</a>
+        <a href="wins.html">🌟 My Little Wins</a>
+        <a href="future.html">💌 Future Me</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>💌 A Note to Future Me</h1>
+
+        <p class="subtitle">
+            Write something that you want your future self to remember.
+        </p>
+
+        <textarea
+            id="futureNote"
+            placeholder="Dear future me..."
+            rows="10"></textarea>
+
+        <br><br>
+
+        <button onclick="saveFutureNote()">
+            💌 Save My Note
+        </button>
+
+        <button onclick="readFutureNote()">
+            📖 Read My Note
+        </button>
+
+        <div id="futureResponse"></div>
+
+    </div>
+
+    <script>
+
+        function saveFutureNote() {
+
+            let note = document.getElementById("futureNote").value;
+
+            if (note.trim() === "") {
+                alert("Write something first 🌱");
+                return;
+            }
+
+            localStorage.setItem("futureNote", note);
+
+            document.getElementById("futureResponse").innerHTML = `
+                <h2>💌 Saved.</h2>
+                <p>Your future self has a little message waiting.</p>
+            `;
+        }
+
+
+        function readFutureNote() {
+
+            let note = localStorage.getItem("futureNote");
+
+            if (!note) {
+
+                document.getElementById("futureResponse").innerHTML = `
+                    <h2>🌱 Nothing here yet.</h2>
+                    <p>Write a note to your future self first.</p>
+                `;
+
+                return;
+            }
+
+            document.getElementById("futureResponse").innerHTML = `
+                <h2>💌 From past you...</h2>
+                <div class="win-card">
+                    ${note}
+                </div>
+            `;
+        }
+
+    </script>
+
+</body>
+
+</html>
